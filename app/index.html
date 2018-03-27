@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html ng-app="blerter">
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <!--
+    <base href="/service/" />
+    -->
+    <title>Blerter Dashboard</title>
+
+
+
+
+</head>
+<body ng-controller="CtrlMain">
+<head>
+
+    <link href="styles/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/css/angular-material.css" rel="stylesheet">
+    <link href="styles/css/md-expansion-panel.min.css" rel="stylesheet">
+    <link href="styles/css/swagger-ui.css" rel="stylesheet">
+
+
+    <link href="styles/css/main.css" rel="stylesheet">
+    <link theme-style  rel="stylesheet">
+
+</head>
+<div layout="column" class="main-navigation" ng-cloak>
+
+    <section layout="row" flex>
+
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-is-locked-open="data.isSideLeftLockWhenOpen"
+                md-whiteframe="4">
+
+            <md-toolbar class="md-theme-indigo">
+                <span class="title">Prototype Dashboard</span>
+             </md-toolbar>
+            <md-content layout-padding md-no-flicker >
+                <md-expansion-panel-group md-component-id="panelGroup" multiple>
+                    <md-expansion-panel md-component-id="panel1" ng-click="event.server()">
+                        <md-expansion-panel-collapsed>
+                            <i class="material-icons">picture_in_picture_alt</i>
+                            <h1 class="md-title">Micro Services</h1>
+                            <md-expansion-panel-icon></md-expansion-panel-icon>
+                        </md-expansion-panel-collapsed>
+                        <md-expansion-panel-expanded>
+                            <md-expansion-panel-header>
+                                <i class="material-icons">picture_in_picture_alt</i>
+                                <h1 class="md-title">Micro Services</h1>
+                                <md-expansion-panel-icon></md-expansion-panel-icon>
+                            </md-expansion-panel-header>
+                            <md-expansion-panel-content>
+                                <p>
+                                    Services
+                                </p>
+                            </md-expansion-panel-content>
+                            <md-expansion-panel-footer>
+                                <div flex></div>
+                                <i class="material-icons" ng-click="$panel.collapse()">border_clear</i>
+                            </md-expansion-panel-footer>
+                    </md-expansion-panel>
+
+                    <md-expansion-panel md-component-id="panel2" ng-click="event.bdds()">
+                        <md-expansion-panel-collapsed>
+                            <i class="material-icons">description</i>
+                            <h1 class="md-title">BDDs</h1>
+                            <md-expansion-panel-icon></md-expansion-panel-icon>
+                        </md-expansion-panel-collapsed>
+                        <md-expansion-panel-expanded>
+                            <md-expansion-panel-header>
+                                <i class="material-icons">description</i>
+                                <h1 class="md-title">BDDs</h1>
+                                <md-expansion-panel-icon></md-expansion-panel-icon>
+                            </md-expansion-panel-header>
+                            <md-expansion-panel-content>
+                                <p>
+                                    BDDs
+                                </p>
+                            </md-expansion-panel-content>
+                            <md-expansion-panel-footer>
+                                <div flex></div>
+                                <i class="material-icons" ng-click="$panel.collapse()">border_clear</i>
+                            </md-expansion-panel-footer>
+                    </md-expansion-panel>
+
+
+
+                </md-expansion-panel-group>
+
+            </md-content>
+
+        </md-sidenav>
+
+        <md-content flex layout-padding md-no-flicker >
+            <md-toolbar class="md-theme-indigo">
+                <div>
+                    <i class="material-icons" ng-click="event.toggleLeftClose()">menu</i>
+                    <span class="title" >{{data.header}}</span>
+                </div>
+
+            </md-toolbar>
+            <div class="content-ui-router-view" ui-view="{{data.view}}"></div>
+        </md-content>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+            <!--
+            TODO
+
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Sidenav Right</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+            </md-content>
+            -->
+
+        </md-sidenav>
+
+    </section>
+
+</div>
+
+<!--
+<nav class="navbar navbar-default bgcolor-green-01">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span class="navbar-brand textcolor-white-01" ui-sref="#">Sphere Monitor <sup>(<a  class="textcolor-white-01" ng-click="event.company()">XM</a>)</sup></span>
+        </div>
+
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li><a ng-click="event.server(1)" class="font-medium">Sphere-1</a></li>
+                <li><a ng-click="event.server(2)" class="font-medium">Sphere-2</a></li>
+                <li><a ng-click="event.local()" class="font-medium">Local</a></li>
+                <li><a ng-click="event.documentation()" class="font-medium">Documentation</a></li>
+                <li><a ng-click="event.tests()" class="font-medium">Tests</a></li>
+                <li><a ng-click="event.tools()" class="font-medium">Tools</a></li>
+                <li><a ng-click="event.team()" class="font-medium">Team</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+
+<div class="container">
+    <div ui-view></div>
+</div>
+-->
+
+<script type="text/ng-template" id="alert.html">
+    <div ng-transclude></div>
+</script>
+
+<script type="text/javascript" src="scripts/angular.js"></script>
+<script type="text/javascript" src="scripts/angular-animate.min.js"></script>
+<script type="text/javascript" src="scripts/angular-aria.min.js"></script>
+<script type="text/javascript" src="scripts/angular-material.min.js"></script>
+<script type="text/javascript" src="scripts/angular-cookies.min.js"></script>
+<script type="text/javascript" src="scripts/md-expansion-panel.min.js"></script>
+<script type="text/javascript" src="scripts/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="scripts/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="scripts/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="scripts/swagger-ui.js"></script>
+<script type="text/javascript" src="scripts/lodash.min.js"></script>
+<script type="text/javascript" src="scripts/moment.min.js"></script>
+<script type="text/javascript" src="scripts/security/base64.js"></script>
+<script type="text/javascript" src="scripts/security/bcrypt.js"></script>
+<script type="text/javascript" src="scripts/security/md5.js"></script>
+<script type="text/javascript" src="scripts/security/sha1.js"></script>
+
+<script type="text/javascript" src="src/app.js"></script>
+<!-- services -->
+<script type="text/javascript" src="src/common/services.js"></script>
+<script type="text/javascript" src="src/common/service-local-data-storage.js"></script>
+<script type="text/javascript" src="src/common/service-spinner.js"></script>
+<script type="text/javascript" src="src/features/api/service-api.js"></script>
+
+<!-- filters -->
+<script type="text/javascript" src="src/common/filters.js"></script>
+
+<script type="text/javascript" src="src/common/directives.js"></script>
+<script type="text/javascript" src="src/features/monitor/directive-monitor.js"></script>
+
+<!-- controllers -->
+<script type="text/javascript" src="src/common/controllers.js"></script>
+<script type="text/javascript" src="src/features/main/ctrl-main.js"></script>
+<script type="text/javascript" src="src/features/main/ctrl-login.js"></script>
+<script type="text/javascript" src="src/features/bdds/ctrl-bdds.js"></script>
+<script type="text/javascript" src="src/features/microservices/ctrl-micro-services.js"></script>
+
+</body>
+</html>
+

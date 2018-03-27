@@ -1,0 +1,198 @@
+/* fonts */
+@font-face {
+  font-family: "Roboto-regular";
+  src: url("../../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-light";
+  src: url("../../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-bold";
+  src: url("../../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../styles/icons/material-design-icons/iconfont/MaterialIcons-Regular.eot"); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url("../../styles/icons/material-design-icons/iconfont/MaterialIcons-Regular.woff2") format('woff2'),
+  url("../../styles/icons/material-design-icons/iconfont/MaterialIcons-Regular.woff") format('woff'),
+  url("../../styles/icons/material-design-icons/iconfont/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+/* css reset */
+body, h1, h2, h3, h4, h5, h6, article, aside, details, figcaption, figure, footer, header,  menu, nav, section, summary, blockquote, q, th, td, caption, table,
+div, span, object, iframe, p, button,
+pre, a, abbr, acronym, address,
+code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend,input,select,textarea
+caption, tbody, tfoot, thead, tr{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: $font_Roboto_regular,Helvetica Neue, Helvetica, Arial;
+  vertical-align: baseline;
+
+  -webkit-appearance: none;
+  -webkit-touch-callout: none;
+
+  /*
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  */
+
+ loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0px 0px -50px;
+  }
+
+  img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+  }
+
+  .modal {
+    text-align: center;
+    padding: 0!important;
+  }
+
+  .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .font-medium {
+    font-size: medium;
+  }
+
+  .font-small {
+    font-size: small;
+  }
+
+  input[type=text] {
+    font-size: small;
+    height: 30px;
+    padding: 10px;
+  }
+
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;
+  }
+
+  :-ms-input-placeholder {
+    text-align: center;
+  }
+
+  textarea {
+    resize: none;
+    word-wrap: break-word;
+    transition: 0.05s;
+    -moz-transition: 0.05s;
+    -webkit-transition: 0.05s;
+    -o-transition: 0.05s;
+  }
+
+  .highlight {
+    font-size: large;
+    color: yellow;
+  }
+}
+
+
+.nav-tabs.nav-justified>li>a {
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  border: 0 !important;
+  color: $green01;
+  text-decoration: underline;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+md-tab-content.md-no-scroll {
+  bottom: 0;
+  overflow: hidden;
+}

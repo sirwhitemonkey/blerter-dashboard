@@ -1,0 +1,82 @@
+.main-navigation {
+  height: 100%;
+
+  .content-ui-router-view {
+    margin-top: 75px;
+    margin-bottom: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+
+   }
+
+  md-toolbar {
+    background-color: $red01;
+    .title {
+      color: $white01;
+    }
+  }
+  md-sidenav {
+
+
+    md-toolbar {
+      .title {
+        margin: auto;
+      }
+    }
+  }
+
+  md-content {
+
+
+    i {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 5px;
+      margin-right: auto;
+      font-size: 30px;
+    }
+    md-toolbar {
+      position: fixed;
+      div {
+        display: inline-flex;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: auto;
+        margin-left: 0;
+     }
+
+      .title {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 5px;
+        margin-right: auto;
+      }
+
+    }
+  }
+
+ .md-title {
+    margin: auto;
+  }
+
+  .layout-padding, .layout-padding-gt-sm, .layout-padding-md, .layout-padding > *, .layout-padding-gt-sm > *, .layout-padding-md > *, .layout-padding > .flex, .layout-padding > .flex-gt-sm, .layout-padding > .flex-md {
+    padding: 0px;
+  }
+
+  .md-tab{
+    text-transform: none;
+  }
+
+  md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content {
+    background-color: rgb(250,250,250);
+  }
+
+  .list-inline {
+    padding-top: 10px;
+  }
+
+  .swagger-ui .api-version {
+    visibility: hidden;
+  }
+}
+

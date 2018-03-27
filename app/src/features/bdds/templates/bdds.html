@@ -1,0 +1,14 @@
+<div class="monitor" ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="{{bdd.name}}" ng-repeat="bdd in data" heading="{{bdd.name}}">
+                <md-content class="md-padding">
+                    <loader name="{{bdd.id}}" did-complete="bdd.didComplete" $spinner="spinner"></loader>
+                    <h1 class="md-display-2">{{docu.name}}</h1>
+                    <custom-frame id="{{bdd.id}}" url="bdd.src"
+                                  load-interval="{{bdd.interval}}" did-complete="bdd.didComplete"></custom-frame>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

@@ -1,0 +1,54 @@
+.monitor {
+  margin-top: 10px;
+
+  /*
+  .nav-tabs.nav-justified > li {
+    background-color: $gray01;
+  }
+  */
+
+  .context {
+    margin-top: 15px;
+
+    .limit {
+      width: 80px;
+    }
+
+    .search {
+      width: 400px;
+    }
+
+    .local {
+      width: 350px;
+    }
+
+    .client {
+      width:350px;
+    }
+    .locale {
+      width: 200px;
+    }
+  }
+
+  .form-group {
+    button {
+      margin-top:5px;
+    }
+    input {
+      border-radius: 0;
+    }
+  }
+
+  .context .logs {
+    padding: 10px;
+    overflow-y: scroll;
+    background-color:  black;
+    color: white;
+  }
+
+  textarea {
+    height: 300px;
+    width:  800px;
+    font-size: small;
+  }
+}

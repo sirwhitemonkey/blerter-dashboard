@@ -1,0 +1,17 @@
+<div class="monitor" ng-cloak>
+    <md-content class="md-padding">
+        <h1 class="md-display-2">{{context.name}}</h1>
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="{{api.name}}" ng-repeat="api in apis" heading="{{api.name}}">
+                    <md-content class="md-padding">
+                        <loader name="{{api.id}}" did-complete="api.didComplete" $spinner="spinner"></loader>
+                        <h1 class="md-display-2">{{api.name}}</h1>
+                        <custom-frame id="{{api.id}}" url="api.src" session-id="api.sessionId"
+                                      load-interval="{{api.interval}}" did-complete="api.didComplete"></custom-frame>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </md-content>
+</div>

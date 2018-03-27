@@ -1,0 +1,13 @@
+<div class="monitor" ng-cloak>
+    <md-content class="md-padding">
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="{{ms.name}}" ng-repeat="ms in microservices" heading="{{ms.name}}">
+                    <md-content class="md-padding">
+                        <div swagger-ui url="ms.url" validator-url="false" api-explorer="true"></div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </md-content>
+</div>

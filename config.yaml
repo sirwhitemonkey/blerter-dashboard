@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blerter-dashboard
+spec:
+  type: NodePort
+  ports:
+    - port: 7004
+      targetPort: 7004
+      protocol: TCP
+      name: http
+  selector:
+    name: blerter-dashboard
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+ name: blerter-dashboard
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: blerter-dashboard
+      labels:
+        name: blerter-dashboard
+        app: blerter-dashboard
+    spec:
+      containers:
+        - name: blerter-dashboard
+          image: sirwhitemonkey/blerter-dashboard
+          env:
+            - name: SERVICE_HOST
+              value: SERVICE_HOST
+            - name: DASHBOARD_HOST
+              value: DASHBOARD_HOST
+            - name: GRPC_HOST
+              value: GRPC_HOST
+          ports:
+            - containerPort: 7004
+
+

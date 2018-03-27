@@ -1,0 +1,408 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Grpc Services",
+    "title": "Grpc Services",
+    "version": "1.0",
+    "contact": {
+      "name": "prototype@prototype.com"
+    },
+    "license": {
+      "name": "PrototypeServices",
+      "url": ""
+    }
+  },
+  "host": "SOURCE-URL",
+  "schemes": [
+    "ws"
+  ],
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Grpc",
+      "description": "Services"
+    }
+  ],
+  "paths": {
+    "generateToken(Request)": {
+      "grpc": {
+        "tags": [
+          "Grpc"
+        ],
+        "summary": "Generate token",
+        "description": "Generate token",
+        "operationId": "generateTokenGrpc",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "generateToken",
+            "in": "grpc",
+            "display": "hidden"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "checkToken(Request)": {
+      "grpc": {
+        "tags": [
+          "Grpc"
+        ],
+        "summary": "Check token",
+        "description": "Check token",
+        "operationId": "checkTokenGrpc",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "checkToken",
+            "in": "grpc",
+            "display": "hidden"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string",
+            "input": "text"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "postHealth(Request)": {
+      "grpc": {
+        "tags": [
+          "Grpc"
+        ],
+        "summary": "Post health",
+        "description": "Post health",
+        "operationId": "postHealthGrpc",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "postHealth",
+            "in": "grpc",
+            "display": "hidden"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string",
+            "input": "text"
+          },
+          {
+            "in": "body",
+            "name": "health",
+            "description": "Health",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Health"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "putHealth(Request)": {
+      "grpc": {
+        "tags": [
+          "Grpc"
+        ],
+        "summary": "Put health",
+        "description": "Put health",
+        "operationId": "putHealthGrpc",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "putHealth",
+            "in": "grpc",
+            "display": "hidden"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string",
+            "input": "text"
+          },
+          {
+            "in": "body",
+            "name": "health",
+            "description": "Health",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Health"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "getHealth(Request)": {
+      "grpc": {
+        "tags": [
+          "Grpc"
+        ],
+        "summary": "Get health",
+        "description": "Get health",
+        "operationId": "getHealthGrpc",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "getHealth",
+            "in": "grpc",
+            "display": "hidden"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string",
+            "input": "text"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "description": "Id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "deleteHealth(Request)": {
+      "grpc": {
+        "tags": [
+          "Grpc"
+        ],
+        "summary": "Delete health",
+        "description": "Delete health",
+        "operationId": "deleteHealthGrpc",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "deleteHealth",
+            "in": "grpc",
+            "display": "hidden"
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string",
+            "input": "text"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "description": "Id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Response": {
+      "properties": {
+        "data": {
+          "type": "object"
+        },
+        "responseCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Health": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "safety": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Safety"
+          }
+        }
+      }
+    },
+    "Safety": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
+
